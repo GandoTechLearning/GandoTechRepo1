@@ -7,18 +7,11 @@ namespace GandoTechConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine($"GandoTech app started at {DateTime.Now.ToUniversalTime()}");
-            Console.WriteLine($"=========================================================");
-            var stopTime = DateTime.Now.ToUniversalTime().AddMinutes(5);
-            while (DateTime.Now.ToUniversalTime() < stopTime)
-            {
-                Console.WriteLine($"GandoTech app is going to sleep at {DateTime.Now.ToUniversalTime()}");
-                Thread.Sleep(5000);
-                Console.WriteLine($"GandoTech app is running at {DateTime.Now.ToUniversalTime()}");
-            }
-            Console.WriteLine($"=========================================================");
-            Console.WriteLine($"GandoTech app stopped at {DateTime.Now.ToUniversalTime()}");
-            Console.ReadKey();
+            var result = MyProcess.DoProcess(1000, 1);
+            if (result)
+                Console.WriteLine("App has been finished successfully.");
+            else
+                Console.WriteLine("App has NOT been finished successfully.");
         }
     }
 }
