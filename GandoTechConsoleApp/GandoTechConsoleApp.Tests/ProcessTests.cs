@@ -7,7 +7,7 @@ namespace GandoTechConsoleApp.Tests
         [Fact]
         public void AppIsNotWorkingWithZeroSleepInterval()
         {
-            var resut = !MyProcess.DoProcess(0, 1);
+            var resut = MyProcess.DoProcess(0, 1);
 
             Assert.False(resut);
         }
